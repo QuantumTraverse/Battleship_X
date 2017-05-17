@@ -7,41 +7,34 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 
-public class veryBored extends Application
+public class veryBored
 {
-    Stage window;
+    static boolean answer;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void display() {
+        Stage window = new Stage();
+        window.setTitle("The Firing Board");
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
-        window.setTitle("The Board");
-
-        VBox[] rowOut = new VBox[12];
         HBox topMenu = new HBox();
 
 
         String[] letts = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"};
-        Button[][] buttArray = new Button[12][12];
-        for(int i =0; i < buttArray.length; i ++)
+        for(int i =0; i < 10; i ++)
         {
-            for(int k =0; k < buttArray[i].length; k ++)
+            VBox rowOut = new VBox();
+            for(int k = 0; k < 10; k++)
             {
-                String num = letts[i]+ (k+1);
-                buttArray[i][k] = new Button(num);
-                rowOut[i].getChildren().add
-                        (buttArray[i][k]);
+                rowOut.getChildren().add(new Button(letts[i] + " " + k));
             }
-            topMenu.getChildren().addAll(rowOut[i]);
+            topMenu.getChildren().add(rowOut);
         }
 
         //StackPane layout = new StackPane();
-        Scene scene = new Scene(topMenu, 600, 600);
+        Scene scene = new Scene(topMenu, 400, 400);
         window.setScene(scene);
         window.show();
+
+        //Need to add firing types still
     }
 }
 
