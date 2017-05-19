@@ -1,4 +1,5 @@
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -11,6 +12,9 @@ public class firingBoard
 {
     static String answer;
     static Stage window;
+    static String cannonType;
+    static Scene scene1;
+    static Scene scene2;
 
     public static String display() {
         window = new Stage();
@@ -31,38 +35,48 @@ public class firingBoard
                 rowOut.getChildren().add(buton);
                 buton.setOnAction(e -> {
                     answer = coord;
+                    window.close();
                 });
             }
             topMenu.getChildren().add(rowOut);
         }
         topMenu.setAlignment(Pos.CENTER);
 
+        Label getLabeled = new Label();
+        //cannonType = "ERROR";
         HBox bottomMenu = new HBox();
-        Button buttonF1 = buttonizer("Normal");
-        Button buttonF2 = buttonizer("Flare");
-        Button buttonF3 = buttonizer("Nuke");
-        Button buttonF4 = buttonizer("FlaK");
-        Button buttonF5 = buttonizer("QuadGun");
-        Button buttonF6 = buttonizer("Aircraft");
-        bottomMenu.getChildren().addAll(buttonF1, buttonF2, buttonF3, buttonF4, buttonF5, buttonF6);
+        Button buttonF = new Button("Firing Type: ");
+        bottomMenu.getChildren().addAll(buttonF, getLabeled);
         bottomMenu.setAlignment(Pos.CENTER);
+
+
+        HBox Menu2 = new HBox();
+        Button buttonF1 = buttonizerDeux("Normal");
+        Button buttonF2 = buttonizerDeux("Flare");
+        Button buttonF3 = buttonizerDeux("Nuke");
+        Button buttonF4 = buttonizerDeux("FlaK");
+        Button buttonF5 = buttonizerDeux("QuadGun");
+        Button buttonF6 = buttonizerDeux("Aircraft");
+        Menu2.getChildren().addAll(buttonF1, buttonF2, buttonF3, buttonF4, buttonF5, buttonF6);
+        Menu2.setAlignment(Pos.CENTER);
+        getLabeled.setText(cannonType);
 
         BorderPane borderPane = new BorderPane();
         borderPane.setTop(topMenu);
         borderPane.setBottom(bottomMenu);
 
-        Scene scene = new Scene(borderPane, 400, 300);
-        window.setScene(scene);
+        scene1 = new Scene(borderPane, 400, 300);
+        Scene scene2 = new Scene(Menu2, 400, 300);
+        window.setScene(scene2);
         window.show();
 
-        //Need to add firing types still
         return answer;
     }
-    public static Button buttonizer(String name) {
+    public static Button buttonizerDeux(String name) {
         Button butyawn = new Button(name);
         butyawn.setOnAction(e -> {
-            answer +=  " " + name;
-            window.close();
+            cannonType = name;
+            window.setScene(scene1);
         });
         return butyawn;
     }

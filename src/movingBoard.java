@@ -43,7 +43,6 @@ public class movingBoard
         window.setScene(scene);
         window.show();
 
-        //Need to add firing types still
         return answer;
     }
     public static Button buttonizer(String name) {
