@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,6 +14,7 @@ public class veryBored
 
     public static void display() {
         Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("The Firing Board");
 
         HBox topMenu = new HBox();

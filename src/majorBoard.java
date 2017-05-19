@@ -49,7 +49,7 @@ public class majorBoard extends Application {
         HBox bottomMenu = new HBox();
         Button buttonM = new Button("MOVE");
         Button buttonF = new Button("FIRE");
-        buttonF.setOnAction(e -> veryBored.display());
+        buttonF.setOnAction(e -> firingBoard.display());
         bottomMenu.getChildren().addAll(buttonM, buttonF);
 
         BorderPane borderPane = new BorderPane();
