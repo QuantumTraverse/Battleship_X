@@ -7,7 +7,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
 
-public class firingBoard
+
+public class movingBoard
 {
     static String answer;
     static Stage window;
@@ -15,36 +16,23 @@ public class firingBoard
     public static String display() {
         window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("The Firing Board");
+        window.setTitle("The Moving Board");
 
         HBox topMenu = new HBox();
-
-
-        String[] letts = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"};
-        for(int i =0; i < 10; i ++)
-        {
-            VBox rowOut = new VBox();
-            for(int k = 0; k < 10; k++)
-            {
-                String coord = letts[i] + " " + k;
-                Button buton = new Button(coord);
-                rowOut.getChildren().add(buton);
-                buton.setOnAction(e -> {
-                    answer = coord;
-                });
-            }
-            topMenu.getChildren().add(rowOut);
-        }
+        Button buttonH1 = buttonizerNoClose("LEFT");
+        Button buttonH2 = buttonizerNoClose("RIGHT");
+        Button buttonH3 = buttonizerNoClose("FORWARD");
+        Button buttonH4 = buttonizerNoClose("BACKWARDS");
+        topMenu.getChildren().addAll(buttonH1, buttonH2, buttonH3, buttonH4);
         topMenu.setAlignment(Pos.CENTER);
 
         HBox bottomMenu = new HBox();
-        Button buttonF1 = buttonizer("Normal");
-        Button buttonF2 = buttonizer("Flare");
-        Button buttonF3 = buttonizer("Nuke");
-        Button buttonF4 = buttonizer("FlaK");
-        Button buttonF5 = buttonizer("QuadGun");
-        Button buttonF6 = buttonizer("Aircraft");
-        bottomMenu.getChildren().addAll(buttonF1, buttonF2, buttonF3, buttonF4, buttonF5, buttonF6);
+        Button buttonF1 = buttonizer("Patrol Boat");
+        Button buttonF2 = buttonizer("Submarine");
+        Button buttonF3 = buttonizer("Destroyer");
+        Button buttonF4 = buttonizer("Battleship");
+        Button buttonF5 = buttonizer("Aircraft Carrier");
+        bottomMenu.getChildren().addAll(buttonF1, buttonF2, buttonF3, buttonF4, buttonF5);
         bottomMenu.setAlignment(Pos.CENTER);
 
         BorderPane borderPane = new BorderPane();
@@ -63,6 +51,13 @@ public class firingBoard
         butyawn.setOnAction(e -> {
             answer +=  " " + name;
             window.close();
+        });
+        return butyawn;
+    }
+    public static Button buttonizerNoClose(String name) {
+        Button butyawn = new Button(name);
+        butyawn.setOnAction(e -> {
+            answer +=  " " + name;
         });
         return butyawn;
     }
