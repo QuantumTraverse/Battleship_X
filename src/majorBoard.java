@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import java.lang.String;
 
 public class majorBoard extends Application {
 
@@ -51,7 +52,7 @@ public class majorBoard extends Application {
         HBox bottomMenu = new HBox();
         Button buttonM = new Button("MOVE");
         Button buttonF = new Button("FIRE");
-        buttonM.setOnAction(e -> movingBoard.display());
+        buttonM.setOnAction(e -> ShipSelection.display("Ship Selection", "What ship would you like to move?"));
         buttonF.setOnAction(e -> System.out.println(firingBoard.display()));
         bottomMenu.getChildren().addAll(buttonM, buttonF);
         bottomMenu.setAlignment(Pos.CENTER);

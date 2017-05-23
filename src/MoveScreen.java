@@ -45,10 +45,11 @@ public class MoveScreen extends Application
 
         layoutMove.setAlignment(Pos.CENTER);
         layoutFire.setAlignment(Pos.CENTER);
+        layoutStart.setAlignment(Pos.CENTER);
 
         button2.setOnAction(e -> PracticePopUp.display("Advanced Firing Window", "What kind of missle will you fire?"));
 
-        startScene = new Scene(layoutStart, 1000, 1000);
+        startScene = new Scene(layoutStart, 200, 300);
         moveScene = new Scene(layoutMove, 600, 300);
         fireScene = new Scene(layoutFire, 600, 300);
 
