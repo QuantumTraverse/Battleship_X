@@ -13,7 +13,6 @@ import java.lang.String;
 public class majorBoard extends Application {
 
     Stage window;
-    //Positioner [][] boardArray;
 
     public static void main(String[] args) {
         launch(args);
@@ -59,7 +58,7 @@ public class majorBoard extends Application {
         String message = "";
         for(int row=0 ; row < 10 ; row++ ){
             for(int column=0 ; column < 10 ; column++ ){
-                message += "\t"+"~";
+                message += "~"+"\t";
             }
             message += "\n";
         }

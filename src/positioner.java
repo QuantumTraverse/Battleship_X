@@ -1,11 +1,17 @@
 public class positioner {
     private int xcoord;
     private int ycoord;
-    public position(){
+    public positioner(){
         this(0,0);
     }
-    public position(int x, int y){
+    public positioner(int x, int y){
         xcoord = x;
         ycoord = y;
+    }
+    public int getXPosition(){
+        return xcoord;
+    }
+    public int getYPosition(){
+        return ycoord;
     }
 }
