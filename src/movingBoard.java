@@ -11,28 +11,38 @@ import java.lang.String;
 
 public class movingBoard
 {
-    static String response = "";
+    static int response = 0;
     static Stage window;
 
-    public static String display(int answer) {
+    public static int display(int answer) {
         window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("The Moving Board");
 
-        HBox topMenu = new HBox();
-        Button buttonH1 = buttonizerNoClose("LEFT");
-        Button buttonH2 = buttonizerNoClose("RIGHT");
-        Button buttonH3 = buttonizerNoClose("FORWARD");
-        Button buttonH4 = buttonizerNoClose("BACKWARDS");
-        topMenu.getChildren().addAll(buttonH1, buttonH2, buttonH3, buttonH4);
-        topMenu.setAlignment(Pos.CENTER);
+        Button left = new Button("LEFT");
+        Button right = new Button("RIGHT");
+        Button up = new Button("UP");
+        Button down = new Button("DOWN");
 
-        BorderPane borderPane = new BorderPane();
-        borderPane.setTop(topMenu);
+        VBox top = new VBox();
+        VBox bottom = new VBox();
+        HBox middle = new HBox();
 
-        Scene scene = new Scene(borderPane, 400, 300);
+        top.getChildren().add(up);
+        middle.getChildren().addAll(left, right);
+        bottom.getChildren().add(down);
+
+        VBox layout = new VBox();
+        layout.getChildren().addAll(top, middle, bottom);
+
+        Scene scene = new Scene(layout, 400, 300);
         window.setScene(scene);
         window.show();
+
+        left.setOnAction(e -> {response = 1; window.close();});
+        left.setOnAction(e -> {response = 2; window.close();});
+        left.setOnAction(e -> {response = 3; window.close();});
+        left.setOnAction(e -> {response = 4; window.close();});
 
         //Need to add firing types still
         return response;

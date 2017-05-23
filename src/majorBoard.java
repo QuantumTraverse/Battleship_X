@@ -13,6 +13,7 @@ import java.lang.String;
 public class majorBoard extends Application {
 
     Stage window;
+    //Positioner [][] boardArray;
 
     public static void main(String[] args) {
         launch(args);
@@ -27,22 +28,11 @@ public class majorBoard extends Application {
 
         Label enemyBoard = new Label();
         String message = "\t Enemy Board \n";
+        message += buildBoard();
 
-        for(int row=0 ; row < 10 ; row++ ){
-            for(int column=0 ; column < 10 ; column++ ){
-                message += "\t"+"~";
-            }
-            message += "\n";
-        }
         Label yourBoard = new Label();
         String messageDeux = "\t Your Board \n";
-
-        for(int row=0 ; row < 10 ; row++ ){
-            for(int column=0 ; column < 10 ; column++ ){
-                messageDeux += "\t"+"~";
-            }
-            messageDeux += "\n";
-        }
+        messageDeux += buildBoard();
 
         enemyBoard.setText(message);
         yourBoard.setText(messageDeux);
@@ -64,5 +54,15 @@ public class majorBoard extends Application {
         Scene scene = new Scene(borderPane, 600, 250);
         window.setScene(scene);
         window.show();
+    }
+    public static String buildBoard(){
+        String message = "";
+        for(int row=0 ; row < 10 ; row++ ){
+            for(int column=0 ; column < 10 ; column++ ){
+                message += "\t"+"~";
+            }
+            message += "\n";
+        }
+        return message;
     }
 }
