@@ -25,11 +25,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5024917">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="firingBoard.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="firingBoard.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/firingBoard.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+                <state relative-caret-position="203">
+                  <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -37,26 +37,27 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="movingBoard.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/movingBoard.java">
+          <file leaf-file-name="turnAnalzer.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/turnAnalzer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4">
-                  <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+                <state relative-caret-position="17">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding>
-                    <element signature="imports" expanded="true" />
+                    <element signature="e#103#104#0" expanded="true" />
+                    <element signature="e#129#130#0" expanded="true" />
+                    <element signature="e#159#160#0" expanded="true" />
+                    <element signature="e#199#200#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cdrRiker.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/cdrRiker.java">
+          <file leaf-file-name="ship.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/ship.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="520">
-                  <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="85">
+                  <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -68,8 +69,8 @@
           <file leaf-file-name="majorBoard.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/majorBoard.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="333">
-                  <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+                <state relative-caret-position="1003">
+                  <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -77,13 +78,18 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="firingCannon.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/firingCannon.java">
+          <file leaf-file-name="positioner.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/positioner.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="455">
-                  <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+                <state relative-caret-position="136">
+                  <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
                   <folding>
-                    <element signature="imports" expanded="true" />
+                    <element signature="e#97#98#0" expanded="true" />
+                    <element signature="e#122#123#0" expanded="true" />
+                    <element signature="e#236#237#0" expanded="true" />
+                    <element signature="e#265#266#0" expanded="true" />
+                    <element signature="e#296#297#0" expanded="true" />
+                    <element signature="e#325#326#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -118,10 +124,14 @@
         <option value="$PROJECT_DIR$/src/cdrRiker.java" />
         <option value="$PROJECT_DIR$/src/ltData.java" />
         <option value="$PROJECT_DIR$/src/veryBored.java" />
-        <option value="$PROJECT_DIR$/src/majorBoard.java" />
         <option value="$PROJECT_DIR$/src/firingCannon.java" />
         <option value="$PROJECT_DIR$/src/movingBoard.java" />
         <option value="$PROJECT_DIR$/src/firingBoard.java" />
+        <option value="$PROJECT_DIR$/src/boardMaker.java" />
+        <option value="$PROJECT_DIR$/src/positioner.java" />
+        <option value="$PROJECT_DIR$/src/majorBoard.java" />
+        <option value="$PROJECT_DIR$/src/ship.java" />
+        <option value="$PROJECT_DIR$/src/turnAnalzer.java" />
       </list>
     </option>
   </component>
@@ -162,6 +172,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,8 +208,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -724,11 +734,12 @@
       <workItem from="1494878339750" duration="5528000" />
       <workItem from="1495051437377" duration="5252000" />
       <workItem from="1495224033432" duration="5575000" />
+      <workItem from="1495569523269" duration="4147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24150000" />
+    <option name="totallyTimeSpent" value="28297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="11" width="1442" height="1000" extended-state="0" />
@@ -783,6 +794,54 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/firingBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/movingBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cdrRiker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/majorBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/firingCannon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cdrRiker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -803,14 +862,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/veryBored.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="29" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/veryBored.java" />
     <entry file="file://$PROJECT_DIR$/src/ltData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -851,14 +903,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/veryBored.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/veryBored.java" />
     <entry file="file://$PROJECT_DIR$/src/ltData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -933,14 +978,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/veryBored.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/veryBored.java" />
     <entry file="file://$PROJECT_DIR$/src/ltData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -951,11 +989,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/movingBoard.java">
+    <entry file="file://$PROJECT_DIR$/movingBoard.java" />
+    <entry file="file://$PROJECT_DIR$/src/ltTroy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="107">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -967,20 +1008,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ltTroy.java">
+    <entry file="file://$PROJECT_DIR$/src/firingCannon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="455">
+          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/boardMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/positioner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#97#98#0" expanded="true" />
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/movingBoard.java">
+    <entry file="file://$PROJECT_DIR$/src/majorBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state relative-caret-position="1003">
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -997,10 +1059,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/firingCannon.java">
+    <entry file="file://$PROJECT_DIR$/src/movingBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        <state relative-caret-position="306">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1009,21 +1071,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/firingBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="203">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/majorBoard.java">
+    <entry file="file://$PROJECT_DIR$/src/turnAnalzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#103#104#0" expanded="true" />
+            <element signature="e#129#130#0" expanded="true" />
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
