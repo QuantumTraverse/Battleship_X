@@ -1,5 +1,5 @@
 public class turnAnalzer {
-
+    
     public turnAnalzer(positioner shot, String shotType, ship [] shipArray){
         shootSys();
     }
