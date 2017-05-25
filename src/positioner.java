@@ -8,10 +8,22 @@ public class positioner {
         xcoord = x;
         ycoord = y;
     }
+    public void changeXPosition(int x){
+        xcoord += x;
+    }
+    public void changeYPosition(int y){
+        ycoord += y;
+    }
     public int getXPosition(){
         return xcoord;
     }
     public int getYPosition(){
         return ycoord;
+    }
+    public boolean equals(positioner position) {
+        if(position.getXPosition() == xcoord && position.getYPosition() == ycoord) {
+            return true;
+        }
+        return false;
     }
 }
