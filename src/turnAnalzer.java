@@ -1,4 +1,5 @@
 public class turnAnalzer {
+<<<<<<< HEAD
     private static ship [] shipArray;
     public turnAnalzer(positioner shot, String shotType, ship [] shipArray){
         this.shipArray = shipArray;
@@ -51,4 +52,13 @@ public class turnAnalzer {
             //FlaK
         }
     }
+=======
+//
+//    public turnAnalzer(positioner shot, String shotType, ship [] shipArray){
+//        shootSys();
+//    }
+//    public static shootSys(){
+//        for(ship boat: shipArray)
+//    }
+>>>>>>> origin/master
 }
