@@ -15,9 +15,6 @@ public class majorBoard extends Application {
     public static Stage mainWindow;
     public static String boat;
     public static String move;
-    public static Button buttonM = new Button("MOVE");
-    public static Button buttonF = new Button("FIRE");
-    public static HBox topMenu = new HBox();
     public static BorderPane borderPane = new BorderPane();
     public static BorderPane borderPane2 = new BorderPane();
 
@@ -38,16 +35,21 @@ public class majorBoard extends Application {
         String messageDeux = "\t Your Board \n";
         messageDeux += buildBoard();
 
+        HBox topMenu = new HBox();
+
         enemyBoard.setText(message);
         yourBoard.setText(messageDeux);
         topMenu.getChildren().addAll(enemyBoard, yourBoard);
         topMenu.setAlignment(Pos.CENTER);
 
+        Button buttonM = new Button("MOVE");
+        Button buttonF = new Button("FIRE");
+
         HBox bottomMenu = new HBox();
 
         buttonM.setOnAction(e -> ShipSelection.display("Ship Selection", "What ship would you like to move?"));
         buttonF.setOnAction(e -> firingBoard.display());
-        bottomMenu.getChildren().addAll(buttonM, buttonF);
+        bottomMenu.getChildren().addAll(buttonF, buttonM);
         bottomMenu.setAlignment(Pos.CENTER);
 
         borderPane.setTop(topMenu);
@@ -69,23 +71,35 @@ public class majorBoard extends Application {
         return message;
     }
 
-    public static void displayAgain(String boat, String move) {
-        mainWindow.close();
-        Button shipType = new Button(boat);
-        Button direction = new Button(move);
+    public static void displayMove(String boat, String move) {
+        Label enemyBoard = new Label();
+        String message = "\t Enemy Board \n";
+        message += buildBoard();
 
-        VBox newInfo = new VBox();
-        newInfo.getChildren().addAll(shipType, direction);
+        Label yourBoard = new Label();
+        String messageDeux = "\t Your Board \n";
+        messageDeux += buildBoard();
+
+        HBox topMenu = new HBox();
+
+        enemyBoard.setText(message);
+        yourBoard.setText(messageDeux);
+        topMenu.getChildren().addAll(enemyBoard, yourBoard);
+        topMenu.setAlignment(Pos.CENTER);
+
+        Button moving = new Button(boat + move);
+        Button buttonF = new Button("FIRE");
+
+        buttonF.setOnAction(e -> firingBoard.display());
 
         HBox bottomMenu2 = new HBox(15);
-        bottomMenu2.getChildren().addAll(buttonF, newInfo);
+        bottomMenu2.getChildren().addAll(buttonF, moving);
+        bottomMenu2.setAlignment(Pos.CENTER);
 
         borderPane2.setTop(topMenu);
         borderPane2.setBottom(bottomMenu2);
 
-        Scene scene2 = new Scene(borderPane, 600, 250);
+        Scene scene2 = new Scene(borderPane2, 600, 250);
         mainWindow.setScene(scene2);
-        mainWindow.show();
     }
-
 }
