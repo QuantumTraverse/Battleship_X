@@ -10,19 +10,13 @@ import javafx.scene.layout.BorderPane;
 
 public class firingBoard
 {
-    static String answer;
+    static String gun;
     static Stage window;
-    static String cannonType;
-    static Scene scene1;
-    static Scene scene2;
+    static String answer;
 
-    public static String display() {
-        window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("The Firing Board");
+    public static void display() {
 
         HBox topMenu = new HBox();
-
 
         String[] letts = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"};
         for(int i =0; i < 10; i ++)
@@ -33,10 +27,7 @@ public class firingBoard
                 String coord = letts[i] + " " + k;
                 Button buton = new Button(coord);
                 rowOut.getChildren().add(buton);
-                buton.setOnAction(e -> {
-                    answer = coord;
-                    window.close();
-                });
+                buton.setOnAction(e -> {answer = coord; window.close();});
             }
             topMenu.getChildren().add(rowOut);
         }
@@ -49,36 +40,45 @@ public class firingBoard
         bottomMenu.getChildren().addAll(buttonF, getLabeled);
         bottomMenu.setAlignment(Pos.CENTER);
 
+        window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle("The Firing Board");
 
-        HBox Menu2 = new HBox();
-        Button buttonF1 = buttonizerDeux("Normal");
-        Button buttonF2 = buttonizerDeux("Flare");
-        Button buttonF3 = buttonizerDeux("Nuke");
-        Button buttonF4 = buttonizerDeux("FlaK");
-        Button buttonF5 = buttonizerDeux("QuadGun");
-        Button buttonF6 = buttonizerDeux("Aircraft");
-        Menu2.getChildren().addAll(buttonF1, buttonF2, buttonF3, buttonF4, buttonF5, buttonF6);
-        Menu2.setAlignment(Pos.CENTER);
-        getLabeled.setText(cannonType);
+        Label label = new Label();
+        label.setText("What type of missle would you like to fire?");
 
-        BorderPane borderPane = new BorderPane();
-        borderPane.setTop(topMenu);
-        borderPane.setBottom(bottomMenu);
+        HBox weapons1 = new HBox();
+        HBox weapons2 = new HBox();
+        VBox trueMenu = new VBox(30);
+        VBox truerMenu = new VBox();
 
-        scene1 = new Scene(borderPane, 400, 300);
-        Scene scene2 = new Scene(Menu2, 400, 300);
-        window.setScene(scene2);
+        Button normal = new Button("Normal Missle");
+        Button flare = new Button("Flare");
+        Button nuke = new Button("Nuke");
+        Button flak = new Button("FlaK Cannon");
+        Button quad = new Button("QuadGun");
+        Button aircraft = new Button("Aircraft Barrage");
+
+        weapons1.getChildren().addAll(normal, flare, nuke);
+        weapons2.getChildren().addAll(flak, quad, aircraft);
+        label.setAlignment(Pos.CENTER);
+        weapons1.setAlignment(Pos.CENTER);
+        weapons2.setAlignment(Pos.CENTER);
+
+        trueMenu.getChildren().addAll(label, weapons1);
+        trueMenu.setAlignment(Pos.CENTER);
+        truerMenu.getChildren().addAll(trueMenu, weapons2);
+        truerMenu.setAlignment(Pos.CENTER);
+
+        normal.setOnAction(e -> {window.close(); gun = "Normal Missle";});
+        flare.setOnAction(e -> {window.close(); gun = "Flare";});
+        nuke.setOnAction(e -> {window.close(); gun = "Nuke";});
+        flak.setOnAction(e -> {window.close(); gun = "FlaK Cannon";});
+        quad.setOnAction(e -> {window.close(); gun = "QuadGun";});
+        aircraft.setOnAction(e -> {window.close(); gun = "Aircraft barrage";});
+
+        Scene scene = new Scene(truerMenu, 400, 200);
+        window.setScene(scene);
         window.show();
-
-        return answer;
-    }
-    public static Button buttonizerDeux(String name) {
-        Button butyawn = new Button(name);
-        butyawn.setOnAction(e -> {
-            cannonType = name;
-            window.setScene(scene1);
-        });
-        return butyawn;
     }
 }
-
