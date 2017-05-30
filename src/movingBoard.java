@@ -8,6 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.BorderPane;
 import java.lang.String;
+import java.lang.Exception;
 
 
 public class movingBoard
@@ -46,9 +47,9 @@ public class movingBoard
         window.setScene(scene);
         window.show();
 
-        left.setOnAction(e -> {response = "Left"; window.close(); majorBoard.displayAgain(answer, response);});
-        right.setOnAction(e -> {response = "Right"; window.close(); majorBoard.displayAgain(answer, response);});
-        up.setOnAction(e -> {response = "Up"; window.close(); majorBoard.displayAgain(answer, response);});
-        down.setOnAction(e -> {response = "Down"; window.close(); majorBoard.displayAgain(answer, response);});
+        left.setOnAction(e -> {response = "Move Left!"; window.close(); majorBoard.displayMove(answer, response);});
+        right.setOnAction(e -> {response = "Move Right!"; window.close(); majorBoard.displayMove(answer, response);});
+        up.setOnAction(e -> {response = "Move Up!"; window.close(); majorBoard.displayMove(answer, response);});
+        down.setOnAction(e -> {response = "Move Down!"; window.close(); majorBoard.displayMove(answer, response);});
     }
 }
