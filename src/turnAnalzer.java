@@ -1,64 +1,67 @@
+import java.util.ArrayList;
 public class turnAnalzer {
-<<<<<<< HEAD
     private static ship [] shipArray;
+    private static ArrayList<positioner> shots = new ArrayList<>();
     public turnAnalzer(positioner shot, String shotType, ship [] shipArray){
         this.shipArray = shipArray;
-        shootSys(shot, shotType);
+        shotsCreator(shot, shotType);
+        shootSys(shotType);
     }
-    public static void shootSys(positioner shot, String shotType){
+    public static void shootSys(String shotType){
         for(ship boat: shipArray) {
             if(shotType.equals("Normal")) {
                 for (positioner coords : boat.getPosition()) {
-                    if (coords.equals(shot)) {
-                        boat.takeDamage();
+                    for(positioner shot : shots) {
+                        if (coords.equals(shot)) {
+                            boat.takeDamage();
+                        }
                     }
                 }
             }
             if(shotType.equals("Flare")) {
                 for (positioner coords : boat.getPosition()) {
-                    if (coords.equals(shot)) {
-                        boat.takeDamage();
+                    for(positioner shot : shots) {
+                        if (coords.equals(shot)) {
+                            boat.takeDamage();
+                        }
                     }
                 }
             }
             if(shotType.equals("QuadGun")) {
                 for (positioner coords : boat.getPosition()) {
-                    if (coords.equals(shot)) {
-                        boat.takeDamage();
+                    for(positioner shot : shots) {
+                        if (coords.equals(shot)) {
+                            boat.takeDamage();
+                        }
                     }
-                    shot.changeXPosition(1);
-                    if (coords.equals(shot)) {
-                        boat.takeDamage();
+                }
+            }
+            if(shotType.equals("Nukes")) {
+                for (positioner coords : boat.getPosition()) {
+                    for(positioner shot : shots) {
+                        if (coords.equals(shot)) {
+                            boat.takeDamage();
+                        }
                     }
-                    shot.changeYPosition(1);
-                    if (coords.equals(shot)) {
-                        boat.takeDamage();
-                    }
-                    shot.changeYPosition(-1);
-                    if (coords.equals(shot)) {
-                        boat.takeDamage();
-                    }
-                    shot.changeXPosition(-1);
                 }
             }
             if(shotType.equals("Aircraft")) {
                 for (positioner coords : boat.getPosition()) {
-                    if (coords.equals(shot)) {
-                        boat.takeDamage();
+                    for(positioner shot : shots) {
+                        if (coords.equals(shot)) {
+                            boat.takeDamage();
+                        }
                     }
                 }
             }
-            //Nukes
             //FlaK
+            boat.testAlive();
         }
     }
-=======
-//
-//    public turnAnalzer(positioner shot, String shotType, ship [] shipArray){
-//        shootSys();
-//    }
-//    public static shootSys(){
-//        for(ship boat: shipArray)
-//    }
->>>>>>> origin/master
+    public void shotsCreator(positioner shot, String shotType) {
+        shots.add(shot);
+        if(shotType.equals("QuadGun")) {
+            
+        }
+    }
 }

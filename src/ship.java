@@ -13,4 +13,9 @@ public class ship {
     public void takeDamage() {
         health--;
     }
+    public boolean testAlive() {
+        if(health <=0)
+            return true;
+        return false;
+    }
 }
