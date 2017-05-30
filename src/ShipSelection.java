@@ -13,7 +13,7 @@ import java.lang.String;
 
 public class ShipSelection {
 
-    static int answer = 0;
+    public static String answer = "";
 
     public static void display(String title, String message) {
 
@@ -34,11 +34,11 @@ public class ShipSelection {
         Button cancel = new Button("cancel");
         cancel.setOnAction(e -> window.close());
 
-        carrier.setOnAction(e -> {answer = 0; window.close(); movingBoard.display(answer);});
-        destroyer.setOnAction(e -> {answer = 1; window.close();movingBoard.display(answer);});
-        patrol.setOnAction(e -> {answer = 2; window.close();movingBoard.display(answer);});
-        sub.setOnAction(e -> {answer = 3; window.close();movingBoard.display(answer);});
-        battle.setOnAction(e -> {answer = 4; window.close();movingBoard.display(answer);});
+        carrier.setOnAction(e -> {answer = "Aircraft Carrier"; window.close(); movingBoard.display(answer);});
+        destroyer.setOnAction(e -> {answer = "Destroyer"; window.close(); movingBoard.display(answer);});
+        patrol.setOnAction(e -> {answer = "Patrol Boat"; window.close(); movingBoard.display(answer);});
+        sub.setOnAction(e -> {answer = "Submarine"; window.close(); movingBoard.display(answer);});
+        battle.setOnAction(e -> {answer = "Battleship"; window.close(); movingBoard.display(answer);});
 
         VBox layout = new VBox(10);
         layout.getChildren().addAll(label, carrier, destroyer, patrol, sub, battle);
