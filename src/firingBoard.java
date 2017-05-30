@@ -70,14 +70,17 @@ public class firingBoard
         truerMenu.getChildren().addAll(trueMenu, weapons2);
         truerMenu.setAlignment(Pos.CENTER);
 
-        normal.setOnAction(e -> {window.close(); gun = "Normal Missle";});
-        flare.setOnAction(e -> {window.close(); gun = "Flare";});
-        nuke.setOnAction(e -> {window.close(); gun = "Nuke";});
-        flak.setOnAction(e -> {window.close(); gun = "FlaK Cannon";});
-        quad.setOnAction(e -> {window.close(); gun = "QuadGun";});
-        aircraft.setOnAction(e -> {window.close(); gun = "Aircraft barrage";});
+        Scene scene2 = new Scene(topMenu, 400, 300);
+
+        normal.setOnAction(e -> {gun = "Normal Missle"; window.setScene(scene2);});
+        flare.setOnAction(e -> {gun = "Flare"; window.setScene(scene2);});
+        nuke.setOnAction(e -> {gun = "Nuke"; window.setScene(scene2);});
+        flak.setOnAction(e -> {gun = "FlaK Cannon"; window.setScene(scene2);});
+        quad.setOnAction(e -> {gun = "QuadGun"; window.setScene(scene2);});
+        aircraft.setOnAction(e -> {gun = "Aircraft barrage"; window.setScene(scene2);});
 
         Scene scene = new Scene(truerMenu, 400, 200);
+
         window.setScene(scene);
         window.show();
     }
