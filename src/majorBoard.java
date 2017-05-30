@@ -12,7 +12,14 @@ import java.lang.String;
 
 public class majorBoard extends Application {
 
-    Stage window;
+    public static Stage mainWindow;
+    public static String boat;
+    public static String move;
+    public static Button buttonM = new Button("MOVE");
+    public static Button buttonF = new Button("FIRE");
+    public static HBox topMenu = new HBox();
+    public static BorderPane borderPane = new BorderPane();
+    public static BorderPane borderPane2 = new BorderPane();
 
     public static void main(String[] args) {
         launch(args);
@@ -20,10 +27,8 @@ public class majorBoard extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
-        window.setTitle("The Main Screen of Awesomeness");
-
-        HBox topMenu = new HBox();
+        mainWindow = primaryStage;
+        mainWindow.setTitle("The Main Screen of Awesomeness");
 
         Label enemyBoard = new Label();
         String message = "\t Enemy Board \n";
@@ -39,21 +44,20 @@ public class majorBoard extends Application {
         topMenu.setAlignment(Pos.CENTER);
 
         HBox bottomMenu = new HBox();
-        Button buttonM = new Button("MOVE");
-        Button buttonF = new Button("FIRE");
+
         buttonM.setOnAction(e -> ShipSelection.display("Ship Selection", "What ship would you like to move?"));
-        buttonF.setOnAction(e -> System.out.println(firingBoard.display()));
+        buttonF.setOnAction(e -> firingBoard.display());
         bottomMenu.getChildren().addAll(buttonM, buttonF);
         bottomMenu.setAlignment(Pos.CENTER);
 
-        BorderPane borderPane = new BorderPane();
         borderPane.setTop(topMenu);
         borderPane.setBottom(bottomMenu);
 
         Scene scene = new Scene(borderPane, 600, 250);
-        window.setScene(scene);
-        window.show();
+        mainWindow.setScene(scene);
+        mainWindow.show();
     }
+
     public static String buildBoard(){
         String message = "";
         for(int row=0 ; row < 10 ; row++ ){
@@ -64,4 +68,24 @@ public class majorBoard extends Application {
         }
         return message;
     }
+
+    public static void displayAgain(String boat, String move) {
+        mainWindow.close();
+        Button shipType = new Button(boat);
+        Button direction = new Button(move);
+
+        VBox newInfo = new VBox();
+        newInfo.getChildren().addAll(shipType, direction);
+
+        HBox bottomMenu2 = new HBox(15);
+        bottomMenu2.getChildren().addAll(buttonF, newInfo);
+
+        borderPane2.setTop(topMenu);
+        borderPane2.setBottom(bottomMenu2);
+
+        Scene scene2 = new Scene(borderPane, 600, 250);
+        mainWindow.setScene(scene2);
+        mainWindow.show();
+    }
+
 }
