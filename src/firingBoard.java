@@ -24,10 +24,10 @@ public class firingBoard
             VBox rowOut = new VBox();
             for(int k = 0; k < 10; k++)
             {
-                String coord = letts[i] + " " + k;
+                String coord = letts[i] + k;
                 Button buton = new Button(coord);
                 rowOut.getChildren().add(buton);
-                buton.setOnAction(e -> {answer = coord; window.close(); majorBoard.displayFire(answer, gun);});
+                buton.setOnAction(e -> {answer = coord; window.close(); majorBoard.displayFire(gun, answer);});
             }
             topMenu.getChildren().add(rowOut);
         }
