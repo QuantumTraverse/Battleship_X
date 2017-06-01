@@ -60,6 +60,15 @@ public class majorBoard extends Application {
 
         borderPane.setTop(topMenu);
         borderPane.setBottom(bottomMenu);
+        
+        int i = 0;
+        Button turn = new Button("Turn " + i);
+
+        VBox layout = new VBox();
+        layout.getChildren().add(turn);
+        layout.setAlignment(Pos.CENTER);
+
+        Scene turnScene = new Scene(turn, 400, 400);
 
         Scene scene = new Scene(borderPane, 600, 250);
         mainWindow.setScene(scene);
