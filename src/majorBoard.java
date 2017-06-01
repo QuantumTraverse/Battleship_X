@@ -14,6 +14,9 @@ import javafx.scene.control.Button;
 public class majorBoard extends Application {
 
     public static Stage mainWindow;
+    public static HBox bottomFire = new HBox();
+    public static HBox bottomMove = new HBox();
+    public static HBox bottomMenu = new HBox();
     public static BorderPane borderPane = new BorderPane();
 
     public static void main(String[] args) {
@@ -40,14 +43,19 @@ public class majorBoard extends Application {
         topMenu.getChildren().addAll(enemyBoard, yourBoard);
         topMenu.setAlignment(Pos.CENTER);
 
-        HBox bottomMenu = new HBox();
-
         Button buttonM = new Button("MOVE");
         Button buttonF = new Button("FIRE");
 
         buttonM.setOnAction(e -> ShipSelection.display("Ship Selection", "What ship would you like to move?"));
         buttonF.setOnAction(e -> firingBoard.display());
-        bottomMenu.getChildren().addAll(buttonF, buttonM);
+
+        bottomFire.getChildren().add(buttonF);
+        bottomFire.setAlignment(Pos.CENTER);
+
+        bottomMove.getChildren().add(buttonM);
+        bottomMove.setAlignment(Pos.CENTER);
+
+        bottomMenu.getChildren().addAll(bottomFire, bottomMove);
         bottomMenu.setAlignment(Pos.CENTER);
 
         borderPane.setTop(topMenu);
@@ -70,34 +78,34 @@ public class majorBoard extends Application {
     }
 
     public static void displayMove(String boat, String move) {
-
-        Button buttonM = new Button("MOVE");
-        Button buttonF = new Button("FIRE");
-
+        Button buttonM = new Button();
         buttonM.setText(boat + move);
 
-        HBox bottomMove = new HBox(15);
-        bottomMove.getChildren().addAll(buttonF, buttonM);
+        bottomMove.getChildren().clear();
+        bottomMove.getChildren().add(buttonM);
         bottomMove.setAlignment(Pos.CENTER);
 
-        borderPane.setBottom(bottomMove);
+        bottomMenu.getChildren().clear();
+        bottomMenu.getChildren().addAll(bottomFire, bottomMove);
+        bottomMenu.setAlignment(Pos.CENTER);
+        borderPane.setBottom(bottomMenu);
 
-        Scene sceneMove = new Scene(borderPane, 600, 250);
-        mainWindow.setScene(sceneMove);
+        Scene sceneFire = new Scene(borderPane, 600, 250);
+        mainWindow.setScene(sceneFire);
     }
 
     public static void displayFire(String gun, String coord) {
-
-        Button buttonM = new Button("MOVE");
-        Button buttonF = new Button("FIRE");
-
+        Button buttonF = new Button();
         buttonF.setText(gun + " on " + coord + "!");
 
-        HBox bottomFire = new HBox(15);
-        bottomFire.getChildren().addAll(buttonF, buttonM);
+        bottomFire.getChildren().clear();
+        bottomFire.getChildren().add(buttonF);
         bottomFire.setAlignment(Pos.CENTER);
 
-        borderPane.setBottom(bottomFire);
+        bottomMenu.getChildren().clear();
+        bottomMenu.getChildren().addAll(bottomFire, bottomMove);
+        bottomMenu.setAlignment(Pos.CENTER);
+        borderPane.setBottom(bottomMenu);
 
         Scene sceneFire = new Scene(borderPane, 600, 250);
         mainWindow.setScene(sceneFire);
