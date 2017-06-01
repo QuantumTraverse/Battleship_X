@@ -27,7 +27,7 @@ public class firingBoard
                 String coord = letts[i] + " " + k;
                 Button buton = new Button(coord);
                 rowOut.getChildren().add(buton);
-                buton.setOnAction(e -> {answer = coord; window.close();});
+                buton.setOnAction(e -> {answer = coord; window.close(); majorBoard.displayFire(answer, gun);});
             }
             topMenu.getChildren().add(rowOut);
         }
@@ -45,14 +45,14 @@ public class firingBoard
         window.setTitle("The Firing Board");
 
         Label label = new Label();
-        label.setText("What type of missle would you like to fire?");
+        label.setText("What type of missile would you like to fire?");
 
         HBox weapons1 = new HBox();
         HBox weapons2 = new HBox();
         VBox trueMenu = new VBox(30);
         VBox truerMenu = new VBox();
 
-        Button normal = new Button("Normal Missle");
+        Button normal = new Button("Normal Missile");
         Button flare = new Button("Flare");
         Button nuke = new Button("Nuke");
         Button flak = new Button("FlaK Cannon");
@@ -72,7 +72,7 @@ public class firingBoard
 
         Scene scene2 = new Scene(topMenu, 400, 300);
 
-        normal.setOnAction(e -> {gun = "Normal Missle"; window.setScene(scene2);});
+        normal.setOnAction(e -> {gun = "Normal Missile"; window.setScene(scene2);});
         flare.setOnAction(e -> {gun = "Flare"; window.setScene(scene2);});
         nuke.setOnAction(e -> {gun = "Nuke"; window.setScene(scene2);});
         flak.setOnAction(e -> {gun = "FlaK Cannon"; window.setScene(scene2);});
