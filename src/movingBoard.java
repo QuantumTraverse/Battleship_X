@@ -13,6 +13,7 @@ import java.lang.Exception;
 
 public class movingBoard
 {
+    static int moved;
     static String response = "";
     static Stage window;
 

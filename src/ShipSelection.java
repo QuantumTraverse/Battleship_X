@@ -34,11 +34,11 @@ public class ShipSelection {
         Button cancel = new Button("cancel");
         cancel.setOnAction(e -> window.close());
 
-        carrier.setOnAction(e -> {answer = "Aircraft Carrier"; window.close(); movingBoard.display(answer);});
-        destroyer.setOnAction(e -> {answer = "Destroyer"; window.close(); movingBoard.display(answer);});
-        patrol.setOnAction(e -> {answer = "Patrol Boat"; window.close(); movingBoard.display(answer);});
-        sub.setOnAction(e -> {answer = "Submarine"; window.close(); movingBoard.display(answer);});
-        battle.setOnAction(e -> {answer = "Battleship"; window.close(); movingBoard.display(answer);});
+        carrier.setOnAction(e -> {answer = "Aircraft Carrier, "; window.close(); movingBoard.display(answer);});
+        destroyer.setOnAction(e -> {answer = "Destroyer, "; window.close(); movingBoard.display(answer);});
+        patrol.setOnAction(e -> {answer = "Patrol Boat, "; window.close(); movingBoard.display(answer);});
+        sub.setOnAction(e -> {answer = "Submarine, "; window.close(); movingBoard.display(answer);});
+        battle.setOnAction(e -> {answer = "Battleship, "; window.close(); movingBoard.display(answer);});
 
         VBox layout = new VBox(10);
         layout.getChildren().addAll(label, carrier, destroyer, patrol, sub, battle);

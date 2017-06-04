@@ -7,6 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
+import java.lang.String;
+import java.lang.Object;
+
+import java.awt.event.ActionEvent;
 
 public class firingBoard
 {
