@@ -4,11 +4,14 @@ public class turnAnalzer {
     private static ArrayList<positioner> shots = new ArrayList<>();
     private static ArrayList<positioner> internalIrradiatedArea;
     private static int[] gunTimer;
+    public turnAnalzer(positioner shot, String shotType, ship[] shipArray){
+        int[] gunTimer = {4, 6, 13, 8, 5};
+        //add to Michael's code
+        this(shot, shotType, shipArray, null, gunTimer);
+    }
     public turnAnalzer(positioner shot, String shotType, ship[] shipArray, ArrayList<positioner> irradiatedArea, int[] gunTimer){
         this.shipArray = shipArray;
         internalIrradiatedArea = irradiatedArea;
-        int[] gunTimer = {4, 6, 13, 8, 5};
-        //add to Michael's code
         this.gunTimer = gunTimer;
         shotsCreator(shot, shotType);
         shootSys(shotType);
@@ -67,6 +70,7 @@ public class turnAnalzer {
                 for (positioner coords : boat.getPosition()) {
                     for(positioner shot : shots) {
                         if (coords.equals(shot)) {
+                            boat.takeDamage();
                             boat.takeDamage();
                         }
                     }

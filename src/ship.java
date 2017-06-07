@@ -18,7 +18,7 @@ public class ship {
                 coords[i] = position;
             }
         }
-        else if(orientation.equals("down")) {
+        else if(orientation.equals("up")) {
             for (int i = 1; i < coords.length; i++) {
                 position.changeYPosition(1);
                 coords[i] = position;
