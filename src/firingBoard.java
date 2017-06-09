@@ -14,11 +14,11 @@ import java.awt.event.ActionEvent;
 
 public class firingBoard
 {
-    static String gun;
+    static String gun = "";
     static Stage window;
-    static String answer;
+    static String coord;
 
-    public static void display() {
+    public static String[] display() {
 
         HBox topMenu = new HBox();
 
@@ -31,7 +31,7 @@ public class firingBoard
                 String coord = letts[i] + k;
                 Button buton = new Button(coord);
                 rowOut.getChildren().add(buton);
-                buton.setOnAction(e -> {answer = coord; window.close(); majorBoard.displayFire(gun, answer);});
+                buton.setOnAction(e -> {window.close(); majorBoard.displayFire(gun, coord);});
             }
             topMenu.getChildren().add(rowOut);
         }
@@ -87,5 +87,8 @@ public class firingBoard
 
         window.setScene(scene);
         window.show();
+
+        String[] objects = {gun + coord};
+        return objects;
     }
 }
