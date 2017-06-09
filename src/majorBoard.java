@@ -25,6 +25,11 @@ public class majorBoard extends Application {
     public static HBox leftMove = new HBox();
     public static VBox options = new VBox(5);
     public static VBox screen = new VBox(20);
+    static String[] realMove;
+    static String[] realFire;
+    static Scene scene;
+    static Scene turn;
+    static PauseTransition time;
     static String boat;
     static String move;
     static String gun;
@@ -46,7 +51,7 @@ public class majorBoard extends Application {
         MediaPlayer opening = new MediaPlayer(openingTheme);
         opening.setCycleCount(MediaPlayer.INDEFINITE);
         Media battleTheme = new Media("File:///H:/Battleship_X-master/src/Music/battleTheme.mp3");
-        MediaPlayer battle = new MediaPlayer((battleTheme));
+        MediaPlayer battle = new MediaPlayer(battleTheme);
         battle.setCycleCount(MediaPlayer.INDEFINITE);
 
         opening.play();
@@ -73,8 +78,8 @@ public class majorBoard extends Application {
         Button buttonF = new Button("FIRE");
         Button buttonE = new Button("END TURN");
 
-        String[] realMove = new String[2];
-        String[] realFire = new String[2];
+        realMove = new String[2];
+        realFire = new String[2];
 
         buttonM.setOnAction(e -> {String[] returnMove = ShipSelection.display("Ship Selection", "What ship would you like to move?"); returnMove = realMove;});
         buttonF.setOnAction(e -> {String[] returnFire = firingBoard.display(); returnFire = realFire;});
@@ -100,7 +105,7 @@ public class majorBoard extends Application {
         screen.setAlignment(Pos.CENTER);
         screen.getChildren().addAll(objective, menu, options);
 
-        Scene scene = new Scene(screen, 800, 500);
+        scene = new Scene(screen, 800, 500);
 
         Label battleship = new Label("BATTLESHIP");
         Label credit = new Label("With Music by Ben Prunty");
@@ -117,8 +122,8 @@ public class majorBoard extends Application {
         Label turnCount = new Label("Turn " + i);
         turnCount.setAlignment(Pos.CENTER);
         turnCount.setFont(Font.font("Verdana", 40));
-        Scene turn = new Scene(turnCount, 600, 400);
-        PauseTransition time = new PauseTransition(Duration.seconds(3));
+        turn = new Scene(turnCount, 600, 400);
+        time = new PauseTransition(Duration.seconds(3));
         time.setOnFinished(e -> mainWindow.setScene(scene));
 
         buttonE.setOnAction(e -> {i++; endTurn(gun, boat, move, coord);});
@@ -158,19 +163,15 @@ public class majorBoard extends Application {
             battleship.mover(move);
         }
 
-        Label turnCount = new Label("Turn " + i);
-        turnCount.setAlignment(Pos.CENTER);
-        turnCount.setFont(Font.font("Verdana", 40));
-        Scene turn = new Scene(turnCount, 600, 400);
-        PauseTransition time = new PauseTransition(Duration.seconds(3));
-        //time.setOnFinished(e -> mainWindow.setScene(scene));
-
         mainWindow.setScene(turn);
+        time = new PauseTransition(Duration.seconds(3));
+        time.play();
     }
 
     public static void displayMove(String boat, String move) {
         Label sayMove = new Label(boat + move);
         Button buttonE = new Button("END TURN");
+
 
         buttonE.setOnAction(e -> {i++; endTurn(gun, boat, move, coord);});
 
