@@ -3,19 +3,16 @@ public class turnAnalzer {
     private static ship [] shipArray;
     private static ArrayList<positioner> shots = new ArrayList<>();
     private static ArrayList<positioner> internalIrradiatedArea;
-    private static int[] gunTimer;
-    public turnAnalzer(positioner shot, String shotType, ship[] shipArray, ArrayList<positioner> irradiatedArea, int[] gunTimer){
+    public turnAnalzer(positioner shot, String shotType, ship[] shipArray, ArrayList<positioner> irradiatedArea){
         this.shipArray = shipArray;
         internalIrradiatedArea = irradiatedArea;
-        this.gunTimer = gunTimer;
         shotsCreator(shot, shotType);
         shootSys(shotType);
         irradiationCheck();
-        ager();
     }
     public static void shootSys(String shotType){
         for(ship boat: shipArray) {
-            if(shotType.equals("Normal")) {
+            if(shotType.equals("Normal Missile")) {
                 for (positioner coords : boat.getPosition()) {
                     for(positioner shot : shots) {
                         if (coords.equals(shot)) {
@@ -51,7 +48,7 @@ public class turnAnalzer {
                     }
                 }
             }
-            if(shotType.equals("Aircraft")) {
+            if(shotType.equals("Aircraft Barrage")) {
                 for (positioner coords : boat.getPosition()) {
                     for(positioner shot : shots) {
                         if (coords.equals(shot)) {
@@ -60,19 +57,9 @@ public class turnAnalzer {
                     }
                 }
             }
-            //FlaK works as if you are Kim Jong Un
-            if(shotType.equals("FlaK")) {
-                for (positioner coords : boat.getPosition()) {
-                    for(positioner shot : shots) {
-                        if (coords.equals(shot)) {
-                            boat.takeDamage();
-                            boat.takeDamage();
-                        }
-                    }
-                }
-            }
+            //FlaK doesn't do anything unless you are Kim Jong Un
             //if(!boat.testAlive()) {
-            //create pop-up window declaring boat sunk
+                //create pop-up window declaring boat sunk
             //}
         }
     }
@@ -99,7 +86,7 @@ public class turnAnalzer {
                 shot.changeYPosition(1);
             }
         }
-        if(shotType.equals("Aircraft")) {
+        if(shotType.equals("Aircraft Barrage")) {
             shots.remove(0);
             shot.changeXPosition(-2);
             shot.changeYPosition(-1);
@@ -116,42 +103,12 @@ public class turnAnalzer {
     }
     public void irradiationCheck() {
         for(ship boat : shipArray) {
-            boolean youFoodInaBox = false;
-            for(positioner position : boat.getPosition()) {
-                for (positioner spot : internalIrradiatedArea) {
-                    if (position.equals(spot) && youFoodInaBox) {
+            for(positioner position : boat.getPosition())
+                for(positioner spot : internalIrradiatedArea) {
+                    if (position.equals(spot)) {
                         boat.takeDamage();
-                        youFoodInaBox = true;
                     }
                 }
-            }
-        }
-    }
-    public static boolean canFire(String shotType, int[] gunTimes) {
-        if(shotType.equals("Normal"))
-            return true;
-        if(shotType.equals("Flare") && gunTimes[0] == 0)
-            return true;
-        if(shotType.equals("QuadGun") && gunTimes[1] == 0)
-            return true;
-        if(shotType.equals("Nuke") && gunTimes[2] == 0)
-            return true;
-        if(shotType.equals("Aircraft") && gunTimes[3] == 0)
-            return true;
-        if(shotType.equals("FlaK") && gunTimes[4] == 0)
-            return true;
-        return false;
-    }
-    public void ager() {
-        for(int time : gunTimer) {
-            if(time > 0)
-                time--;
-        }
-        for(positioner spot : internalIrradiatedArea) {
-            if(spot.getAge() >= 6) {
-                internalIrradiatedArea.remove(spot);
-            }
-            else spot.ager();
         }
     }
 }
