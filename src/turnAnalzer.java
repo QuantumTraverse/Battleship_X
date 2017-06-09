@@ -32,6 +32,7 @@ public class turnAnalzer {
                         }
                     }
                 }
+                gunTimer[0] = 4;
             }
             if(shotType.equals("QuadGun")) {
                 for (positioner coords : boat.getPosition()) {
@@ -41,6 +42,7 @@ public class turnAnalzer {
                         }
                     }
                 }
+                gunTimer[1] = 6;
             }
             if(shotType.equals("Nuke")) {
                 for (positioner coords : boat.getPosition()) {
@@ -50,6 +52,7 @@ public class turnAnalzer {
                         }
                     }
                 }
+                gunTimer[2] = 13;
             }
             if(shotType.equals("Aircraft Barrage")) {
                 for (positioner coords : boat.getPosition()) {
@@ -59,6 +62,7 @@ public class turnAnalzer {
                         }
                     }
                 }
+                gunTimer[3] = 8;
             }
             //FlaK works as if you are Kim Jong Un
             if(shotType.equals("FlaK")) {
@@ -70,6 +74,7 @@ public class turnAnalzer {
                         }
                     }
                 }
+                gunTimer[4] = 5;
             }
             //if(!boat.testAlive()) {
             //create pop-up window declaring boat sunk
