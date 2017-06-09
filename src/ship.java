@@ -59,7 +59,7 @@ public class ship {
         health--;
     }
     public boolean testAlive() {
-        if(health <=0)
+        if(health > 0)
             return true;
         return false;
     }
