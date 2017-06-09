@@ -15,4 +15,19 @@ public class boardProduction {
         }
         return board;
     }
+    public static String makeBoard(ship[] shipArray) {
+        for(int row=10 ; row > 0 ; row-- ){
+            for(int column=0 ; column < 10 ; column++ ){
+                for(ship boat : shipArray) {
+                    for(positioner coord : boat.getPosition()) {
+                        if ((coord.getXPosition() == column) && (coord.getYPosition() == row))
+                            board += "B" + "\t";
+                    }
+                }
+
+            }
+            board += "\n";
+        }
+        return board;
+    }
 }
