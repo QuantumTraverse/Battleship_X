@@ -22,6 +22,7 @@ public class boardProduction {
                     for(positioner coord : boat.getPosition()) {
                         if ((coord.getXPosition() == column) && (coord.getYPosition() == row))
                             board += "B" + "\t";
+                        else board += "~" + "\t";
                     }
                 }
 
