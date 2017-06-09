@@ -13,11 +13,10 @@ import java.lang.Exception;
 
 public class movingBoard
 {
-    static int moved;
     static String response = "";
     static Stage window;
 
-    public static void display(String answer) {
+    public static String display(String answer) {
         window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("The Moving Board");
@@ -52,5 +51,7 @@ public class movingBoard
         right.setOnAction(e -> {response = "Move Right!"; window.close(); majorBoard.displayMove(answer, response);});
         up.setOnAction(e -> {response = "Move Up!"; window.close(); majorBoard.displayMove(answer, response);});
         down.setOnAction(e -> {response = "Move Down!"; window.close(); majorBoard.displayMove(answer, response);});
+
+        return response;
     }
 }
