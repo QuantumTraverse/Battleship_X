@@ -13,9 +13,10 @@ import java.lang.String;
 
 public class ShipSelection {
 
-    public static String answer = "";
+    static String boat = "";
+    static String move = "";
 
-    public static void display(String title, String message) {
+    public static String[] display(String title, String message) {
 
         Stage window = new Stage();
 
@@ -34,11 +35,11 @@ public class ShipSelection {
         Button cancel = new Button("cancel");
         cancel.setOnAction(e -> window.close());
 
-        carrier.setOnAction(e -> {answer = "Aircraft Carrier, "; window.close(); movingBoard.display(answer);});
-        destroyer.setOnAction(e -> {answer = "Destroyer, "; window.close(); movingBoard.display(answer);});
-        patrol.setOnAction(e -> {answer = "Patrol Boat, "; window.close(); movingBoard.display(answer);});
-        sub.setOnAction(e -> {answer = "Submarine, "; window.close(); movingBoard.display(answer);});
-        battle.setOnAction(e -> {answer = "Battleship, "; window.close(); movingBoard.display(answer);});
+        carrier.setOnAction(e -> {boat = "Aircraft Carrier, "; window.close(); move = movingBoard.display(boat);});
+        destroyer.setOnAction(e -> {boat = "Destroyer, "; window.close(); move = movingBoard.display(boat);});
+        patrol.setOnAction(e -> {boat = "Patrol Boat, "; window.close(); move = movingBoard.display(boat);});
+        sub.setOnAction(e -> {boat = "Submarine, "; window.close(); move = movingBoard.display(boat);});
+        battle.setOnAction(e -> {boat = "Battleship, "; window.close(); move = movingBoard.display(boat);});
 
         VBox layout = new VBox(10);
         layout.getChildren().addAll(label, carrier, destroyer, patrol, sub, battle);
@@ -48,6 +49,8 @@ public class ShipSelection {
         window.setScene(scene);
         window.showAndWait();
 
+        String[] things = {boat, move};
+        return things;
     }
 
 }
