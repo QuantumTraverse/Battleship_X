@@ -17,6 +17,8 @@ public class boardProduction {
                         board += "R"+"\t";
                     youNoFindAWatch = false;
                 }
+                if(youNoFindAWatch)
+                    board += "~" + "\t";
 
             }
             board += "\n";
