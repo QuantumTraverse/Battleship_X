@@ -23,7 +23,7 @@ public class boardProduction {
         }
         return board;
     }
-    public static String makeBoard(ship[] shipArray, positioner[] enemyShots) { //yourShips
+    public static String makeBoard(ship[] shipArray, ArrayList<positioner> irradiatedArea, positioner[] enemyShots) { //yourShips
         for(int row=10 ; row > 0 ; row-- ){
             for(int column=0 ; column < 10 ; column++ ){
                 boolean youNoFindAWatch = true;
@@ -40,6 +40,11 @@ public class boardProduction {
                             youNoFindAWatch = false;
                         }
                     }
+                }
+                for(positioner coord : irradiatedArea) {
+                    if((coord.getXPosition() == column)&&(coord.getYPosition() == row) && youNoFindAWatch)
+                        board += "R"+"\t";
+                    youNoFindAWatch = false;
                 }
                 if(youNoFindAWatch)
                     board += "~" + "\t";
