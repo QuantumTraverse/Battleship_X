@@ -133,7 +133,7 @@ public class turnAnalzer {
         }
     }
     public static boolean canFire(String shotType, int[] gunTimes) {
-        if(shotType.equals("Normal"))
+        if(shotType.equals("Normal Missile"))
             return true;
         if(shotType.equals("Flare") && gunTimes[0] == 0)
             return true;
@@ -141,7 +141,7 @@ public class turnAnalzer {
             return true;
         if(shotType.equals("Nuke") && gunTimes[2] == 0)
             return true;
-        if(shotType.equals("Aircraft") && gunTimes[3] == 0)
+        if(shotType.equals("Aircraft Barrage") && gunTimes[3] == 0)
             return true;
         if(shotType.equals("FlaK") && gunTimes[4] == 0)
             return true;
