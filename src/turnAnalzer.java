@@ -124,7 +124,7 @@ public class turnAnalzer {
             boolean youFoodInaBox = false;
             for(positioner position : boat.getPosition()) {
                 for (positioner spot : internalIrradiatedArea) {
-                    if (position.equals(spot) && youFoodInaBox) {
+                    if (position.equals(spot) && !youFoodInaBox) {
                         boat.takeDamage();
                         youFoodInaBox = true;
                     }
