@@ -4,7 +4,7 @@ public class turnAnalzer {
     private static ArrayList<positioner> shots = new ArrayList<>();
     private static ArrayList<positioner> internalIrradiatedArea;
     private static int[] gunTimer;
-    public turnAnalzer(positioner shot, String shotType, ship[] shipArray, ArrayList<positioner> irradiatedArea, int[] gunTimer){
+    public static void doTurnAnalzer(positioner shot, String shotType, ship[] shipArray, ArrayList<positioner> irradiatedArea, int[] gunTimer){
         this.shipArray = shipArray;
         internalIrradiatedArea = irradiatedArea;
         this.gunTimer = gunTimer;
@@ -13,7 +13,12 @@ public class turnAnalzer {
         irradiationCheck();
         ager();
     }
-    public static void shootSys(String shotType){
+    public static void doTurnAnalzer(positioner shot, String shotType, ship[] shipArray){		
+         int[] gunTimer = {4, 6, 13, 8, 5};		
+         ArrayList<positioner> irradiatedSegments = new ArrayList<>();		
+         this(shot, shotType, shipArray, irradiatedSegments, gunTimer);		
+    }
+    public void shootSys(String shotType){
         for(ship boat: shipArray) {
             if(shotType.equals("Normal Missile")) {
                 for (positioner coords : boat.getPosition()) {
